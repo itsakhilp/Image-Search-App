@@ -5,7 +5,7 @@ const inputElm = document.getElementById("search-input");
 const searchResults = document.querySelector(".search-results");
 const showMore = document.getElementById("show-more-btn");
 
-let inputData = "cat";
+let inputData = "";
 let page = 1;
 
 async function searchImages(){
@@ -19,7 +19,7 @@ async function searchImages(){
     const results = data.results;
 
     if(page === 1){
-        searchResults.innerHTML
+        searchResults.innerHTML = ""
         // console.log(data);
     }
 
@@ -51,7 +51,7 @@ formElm.addEventListener("submit",(event)=>{
     searchImages();
 })
 
-showMore.addEventListener("submit",()=>{
+showMore.addEventListener("click",()=>{
     searchImages();
 })
 
